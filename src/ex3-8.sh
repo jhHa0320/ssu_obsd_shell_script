@@ -7,3 +7,4 @@ fi
 
 echo "$name $phone" >> DB.txt
 
+exit 0
