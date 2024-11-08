@@ -6,6 +6,12 @@ else
 fi
 
 cd $folder_name
+
+for i in `seq 0 4`
+do
+        echo -n "$folder_name$i.txt "
+done
+
 for i in `seq 0 4` 
 do
     touch "$folder_name$i.txt"
