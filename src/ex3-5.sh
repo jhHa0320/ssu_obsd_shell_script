@@ -1,3 +1,5 @@
+#!/bin/bash
+
 func() {
 	echo "함수 안으로 들어 왔음"
 	ls "$@"

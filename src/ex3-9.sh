@@ -1,3 +1,5 @@
+#!/bin/bash
+
 search_term=$1
 
 if [ ! -f DB.txt ]; then

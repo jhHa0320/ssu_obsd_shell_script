@@ -1,3 +1,5 @@
+#!/bin/bash
+
 num1=$1
 operator=$2
 num2=$3

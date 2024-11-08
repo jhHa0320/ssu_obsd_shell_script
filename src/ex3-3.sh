@@ -1,3 +1,5 @@
+#!/bin/bash
+
 height=$1
 weight=$2
 

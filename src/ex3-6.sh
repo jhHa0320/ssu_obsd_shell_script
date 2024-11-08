@@ -1,26 +1,35 @@
-folder_name=$1
-if [ -d "$folder_name" ]; then
-    echo "$folder_name 폴더는 존재하므로 폴더 생성하지 않습니다."
-else
-    mkdir $folder_name
+#!/bin/bash
+
+file_name=$1
+folder_name="${file_name}s"
+
+if [ ! -d "$folder_name" ]; then
+	mkdir "$folder_name"
 fi
 
 cd $folder_name
 
 for i in `seq 0 4`
 do
-        echo -n "$folder_name$i.txt "
+	echo -n "$file_name$i.txt "
 done
 
-for i in `seq 0 4` 
+echo "$folder_name.tar"
+
+for j in `seq 0 4`
 do
-    touch "$folder_name$i.txt"
+	touch "$file_name$j.txt"
 done
 
-mkdir $folder_name
+tar -cvf "$folder_name.tar" *.txt
 
-cd $folder_name
-tar -cvf $folder_name.tar ../*.txt
-tar -xvf $folder_name.tar
+new_folder="$folder_name"
+mkdir -p "$new_folder"
+mv "$folder_name.tar" "$new_folder"
+
+cd "$new_folder"
+
+tar -xf "$folder_name.tar"
 
 exit 0
+

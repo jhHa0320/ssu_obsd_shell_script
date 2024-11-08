@@ -1,3 +1,5 @@
+#!/bin/bash
+
 folder_name=$1
 
 if [ -d "$folder_name" ]; then
